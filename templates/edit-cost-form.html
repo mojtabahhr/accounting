@@ -1,0 +1,11 @@
+<form action="/update-record/{{cost.id}}/" method="post">
+    {% csrf_token %}
+    <input name='who', value={{cost.who}}>
+    <input name='title', value={{cost.title}}>
+    <input name='amount', value={{cost.amount}}>
+    <input name='fee', value={{cost.fee}}>
+    <input name='price', value={{cost.price}}>
+    <input name='cost_type', value={{cost.cost_type}}>
+    <input name='info', value={{cost.info}}>
+    <input type="submit" value="Submit">
+</form>

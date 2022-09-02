@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+<style>
+        table, th, td {
+          border:1px solid black;
+        }
+</style>
+<form action="/costs/" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit">
+</form>
+<br>
+<div class="fieldWrapper">
+    <table style="width:100%">
+        <tr>
+            <th>شماره</th>
+            <th>خرنده</th>
+            <th>مقدار</th>
+            <th>فی</th>
+            <th>مبلغ</th>
+            <th>نوع هزینه</th>
+            <th>توضیحات</th>
+        </tr>
+        <tr >  
+            <td>
+                <a href"/edit-cost/{{cost.id}}">{{cost.id}}</a>
+            </td>
+            <td>
+                {{cost.who}}
+            </td>
+            <td>
+                {{cost.amount}}
+            </td>
+            <td>
+                {{cost.fee}}
+            </td>
+            <td>
+                {{cost.price}}
+            </td>
+            <td>
+                {{cost.cost_type}}
+            </td>
+            <td>
+            {{ cost.info}}
+            </td>
+        </tr>
+    </div>
+
+
+</table>
+</body>
+</html>

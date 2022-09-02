@@ -1,0 +1,67 @@
+{% load humanize %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+<style>
+        table, th, td {
+          border:1px solid black;
+        }
+</style>
+
+<!-- {{costs}} -->
+
+<table style="width:100%">
+    <tr>
+        <th>شماره</th>
+        <th>خرنده</th>
+        <th>عنوان</th>
+        <th>مقدار</th>
+        <th>فی</th>
+        <th>مبلغ</th>
+        <th>نوع هزینه</th>
+        <th>توضیحات</th>
+        <th>پاک کردن</th>
+      </tr>
+      {% for i in costs %}
+        <tr >  
+            <td>
+                <a href="/costs/{{i.id}}">{{i.id}}</a>
+            </td>
+            <td>
+                {{i.who}}
+            </td>
+            <td>
+                {{i.title}}
+            </td>
+            <td>
+                {{i.amount|intcomma:False}}
+            </td>
+            <td>
+                {{i.fee|intcomma}}
+            </td>
+            <td>
+                {{i.price|intcomma}}
+            </td>
+            <td>
+                {{i.cost_type}}
+            </td>
+            <td>
+               {{ i.info}}
+            </td>
+            <td>
+                <a href="/delete/{{i.id}}"> delete </a>
+            </td>
+        </tr>
+        {% endfor %}
+
+
+
+
+</table>
+</body>
+</html>
