@@ -19,7 +19,7 @@ class CostsModel(models.Model):
     title = models.CharField(max_length=256)
     amount = models.IntegerField(blank=True, null=True)
     fee = models.IntegerField(blank=True, null=True)
-    price = models.IntegerField(blank=True, null=True)
+    price = models.IntegerField(blank=True, null=False)
     cost_type = models.CharField(max_length=30,choices=TYPE)
     date = models.DateField()
     info = models.TextField()
